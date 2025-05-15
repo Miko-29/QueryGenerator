@@ -1,0 +1,263 @@
+<div class="form-container">
+    <div class="formSec">
+      <h1>Configure Your API</h1>
+      <form action="#">
+        <div class="right-top-container">
+          <div class="input-field config-input">
+            <label for="api-name" class="form-label">API Name</label>
+            <input
+              type="email"
+              class="form-control input-item"
+              id="api-name"
+              placeholder=""
+            />
+          </div>
+          <div class="input-field config-input">
+            <label for="api-name" class="form-label">Resource Id</label>
+            <input
+              type="email"
+              class="form-control input-item"
+              id="api-name"
+              placeholder=""
+            />
+          </div>
+          <div class="input-field config-input ">
+            <label class="form-check-label" for="exampleCheck1"
+              >Method Type</label
+            >
+            <div class="outer-select-field">
+              <select
+                class="select form-control e1 select-group"
+                required
+                placeholder="method tupe "
+              >
+                <option value="">GET</option>
+                <option value="">POST</option>
+                <option value="">PUT</option>
+                <option value="">PATCH</option>
+                <option value="">DELETE</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-field config-input">
+            <label class="form-check-label" for="exampleCheck1"
+              >Request Type</label
+            >
+            <div class="outer-select-field">
+              <select
+                class="select form-control e1 select-group"
+                required
+                placeholder="request type "
+              >
+                <option value="">Query</option>
+                <option value="">Function</option>
+                <option value="">Procedure</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="right-bottom-container">
+          <div class="bottom-left-container">
+            <form>
+              <div class="form-content">
+                <div class="input-field config-input">
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Select Table</label
+                  >
+                  <div class="outer-select-field">
+                    <select
+                      class="select form-control e1 select-group"
+                      required
+                      placeholder="method tupe "
+                    >
+                      <option value="" disabled selected>
+                        Select Table
+                      </option>
+                      <option value="">iam_userGlobal</option>
+                      <option value="">iam_userGlobal</option>
+                      <option value="">iam_userGlobal</option>
+                      <option value="">iam_userGlobal</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-field config-input">
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Select Column</label
+                  >
+                  <div class="outer-select-field">
+                    <select
+                      class="select form-control e1 select-group"
+                      required
+                      placeholder="method tupe "
+                    >
+                      <option value="" disabled selected>
+                        Select Column
+                      </option>
+                      <option value="">Name</option>
+                      <option value="">Username</option>
+                      <option value="">Email</option>
+                      <option value="">Phone number</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-content">
+                <div class="input-field config-input unique-val">
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Select column to get unique values</label
+                  >
+                  <div class="outer-select-field">
+                    <select
+                      class="select form-control e1 select-group"
+                      required
+                      placeholder="method tupe "
+                    >
+                      <option value="" disabled selected>Name</option>
+                      <option value="">Akash Manchanda</option>
+                      <option value="">Sagar Agg.</option>
+                      <option value="">Vinay Verma</option>
+                      <option value="">Madhu Singh</option>
+                    </select>
+                  </div>
+                  <button class="circle-arrow"></button>
+                  <textarea class="value-container"></textarea>
+                </div>
+                <div class="input-field config-input">
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Select Operator</label
+                  >
+                  <div class="operator-container">
+                    <button>=</button>
+                    <button><></button>
+                    <button>Like</button>
+                    <button>></button>
+                    <button>>=</button>
+                    <button>And</button>
+                    <button><</button>
+                    <button><=</button>
+                    <button>Or</button>
+                    <button>-</button>
+                    <button>%</button>
+                    <button>()</button>
+                    <button>Not</button>
+                    <button>Is</button>
+                    <button>In</button>
+                    <button>Null</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-content">
+                <div class="input-field config-input">
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Group By</label
+                  >
+                  <!-- <form action="" id="tagForm"> -->
+                  <div class="outer-select-field">
+                    <select
+                      multiple="true"
+                      name="choose_usr_email[]"
+                      id="choose_usr_email"
+                      class="form-control select2"
+                    >
+                      <option value="Something">Gender</option>
+                      <option value="Anything">Age</option>
+                      <option value="Something">Gender</option>
+                      <option value="Anything">Age</option>
+                      <option value="Something">Gender</option>
+                      <option value="Anything">Age</option>
+                      <option value="Something">Gender</option>
+                      <option value="Anything">Age</option>
+                      <option value="Something">Gender</option>
+                      <option value="Anything">Age</option>
+                    </select>
+                  </div>
+                  <!-- </form> -->
+                </div>
+                <div class="input-field config-input">
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Sort By</label
+                  >
+                  <div class="radio-box">
+                    <input type="radio" name="sort" value="sort1" /> Asc
+                  </div>
+                  <div class="radio-box">
+                    <input type="radio" name="sort" value="sort2" />
+                    Desc
+                  </div>
+                  <div class="outer-select-field">
+                    <select
+                      class="select form-control e1 select-group"
+                      required
+                      placeholder="method tupe "
+                    >
+                      <option value="">
+                        Select columns for order by
+                      </option>
+                      <option value="">POST</option>
+                      <option value="">PUT</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-content">
+                <div class="input-field config-input">
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Aggregates</label
+                  >
+                  <div class="outer-select-field">
+                    <select
+                      class="select form-control e1 select-group"
+                      required
+                      placeholder="method tupe "
+                    >
+                      <option value="">Avg</option>
+                      <option value="">iam_userGlobal</option>
+                      <option value="">iam_userGlobal</option>
+                      <option value="">iam_userGlobal</option>
+                      <option value="">iam_userGlobal</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-field config-input">
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Limit</label
+                  >
+
+                  <input
+                    type="number"
+                    class="form-control input-item"
+                    id="api-name"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="btn-container">
+                <button class="verify-btn">Verified</button>
+                <button class="run-btn enable-btn">Run Query</button>
+              </div>
+            </form>
+          </div>
+          <div class="bottom-right-container">
+            <div class="form-content">
+              <div class="input-field config-input">
+                <label class="form-check-label" for="exampleCheck1"
+                  >Query Builder</label
+                >
+                <div
+                  class="query-builder-input"
+                  placeholder="Select: From Customers"
+                >
+                  Select: From
+                  <span class="query-table-input">iam_userGlobal</span>
+                  where <span class="query-column-input">name</span>
+                  <span class="query-operator-input">=</span>
+                  <span class="query-value-input">Sagar Agg.</span>
+                  limit + <span class="query-limit-input">1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
