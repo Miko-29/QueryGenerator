@@ -1,263 +1,223 @@
-<div class="form-container">
-    <div class="formSec">
-      <h1>Configure Your API</h1>
-      <form action="#">
-        <div class="right-top-container">
-          <div class="input-field config-input">
-            <label for="api-name" class="form-label">API Name</label>
-            <input
-              type="email"
-              class="form-control input-item"
-              id="api-name"
-              placeholder=""
-            />
-          </div>
-          <div class="input-field config-input">
-            <label for="api-name" class="form-label">Resource Id</label>
-            <input
-              type="email"
-              class="form-control input-item"
-              id="api-name"
-              placeholder=""
-            />
-          </div>
-          <div class="input-field config-input ">
-            <label class="form-check-label" for="exampleCheck1"
-              >Method Type</label
-            >
-            <div class="outer-select-field">
-              <select
-                class="select form-control e1 select-group"
-                required
-                placeholder="method tupe "
-              >
-                <option value="">GET</option>
-                <option value="">POST</option>
-                <option value="">PUT</option>
-                <option value="">PATCH</option>
-                <option value="">DELETE</option>
-              </select>
-            </div>
-          </div>
-          <div class="input-field config-input">
-            <label class="form-check-label" for="exampleCheck1"
-              >Request Type</label
-            >
-            <div class="outer-select-field">
-              <select
-                class="select form-control e1 select-group"
-                required
-                placeholder="request type "
-              >
-                <option value="">Query</option>
-                <option value="">Function</option>
-                <option value="">Procedure</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="right-bottom-container">
-          <div class="bottom-left-container">
-            <form>
-              <div class="form-content">
-                <div class="input-field config-input">
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Select Table</label
-                  >
-                  <div class="outer-select-field">
-                    <select
-                      class="select form-control e1 select-group"
-                      required
-                      placeholder="method tupe "
-                    >
-                      <option value="" disabled selected>
-                        Select Table
-                      </option>
-                      <option value="">iam_userGlobal</option>
-                      <option value="">iam_userGlobal</option>
-                      <option value="">iam_userGlobal</option>
-                      <option value="">iam_userGlobal</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="input-field config-input">
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Select Column</label
-                  >
-                  <div class="outer-select-field">
-                    <select
-                      class="select form-control e1 select-group"
-                      required
-                      placeholder="method tupe "
-                    >
-                      <option value="" disabled selected>
-                        Select Column
-                      </option>
-                      <option value="">Name</option>
-                      <option value="">Username</option>
-                      <option value="">Email</option>
-                      <option value="">Phone number</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-content">
-                <div class="input-field config-input unique-val">
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Select column to get unique values</label
-                  >
-                  <div class="outer-select-field">
-                    <select
-                      class="select form-control e1 select-group"
-                      required
-                      placeholder="method tupe "
-                    >
-                      <option value="" disabled selected>Name</option>
-                      <option value="">Akash Manchanda</option>
-                      <option value="">Sagar Agg.</option>
-                      <option value="">Vinay Verma</option>
-                      <option value="">Madhu Singh</option>
-                    </select>
-                  </div>
-                  <button class="circle-arrow"></button>
-                  <textarea class="value-container"></textarea>
-                </div>
-                <div class="input-field config-input">
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Select Operator</label
-                  >
-                  <div class="operator-container">
-                    <button>=</button>
-                    <button><></button>
-                    <button>Like</button>
-                    <button>></button>
-                    <button>>=</button>
-                    <button>And</button>
-                    <button><</button>
-                    <button><=</button>
-                    <button>Or</button>
-                    <button>-</button>
-                    <button>%</button>
-                    <button>()</button>
-                    <button>Not</button>
-                    <button>Is</button>
-                    <button>In</button>
-                    <button>Null</button>
-                  </div>
-                </div>
-              </div>
-              <div class="form-content">
-                <div class="input-field config-input">
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Group By</label
-                  >
-                  <!-- <form action="" id="tagForm"> -->
-                  <div class="outer-select-field">
-                    <select
-                      multiple="true"
-                      name="choose_usr_email[]"
-                      id="choose_usr_email"
-                      class="form-control select2"
-                    >
-                      <option value="Something">Gender</option>
-                      <option value="Anything">Age</option>
-                      <option value="Something">Gender</option>
-                      <option value="Anything">Age</option>
-                      <option value="Something">Gender</option>
-                      <option value="Anything">Age</option>
-                      <option value="Something">Gender</option>
-                      <option value="Anything">Age</option>
-                      <option value="Something">Gender</option>
-                      <option value="Anything">Age</option>
-                    </select>
-                  </div>
-                  <!-- </form> -->
-                </div>
-                <div class="input-field config-input">
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Sort By</label
-                  >
-                  <div class="radio-box">
-                    <input type="radio" name="sort" value="sort1" /> Asc
-                  </div>
-                  <div class="radio-box">
-                    <input type="radio" name="sort" value="sort2" />
-                    Desc
-                  </div>
-                  <div class="outer-select-field">
-                    <select
-                      class="select form-control e1 select-group"
-                      required
-                      placeholder="method tupe "
-                    >
-                      <option value="">
-                        Select columns for order by
-                      </option>
-                      <option value="">POST</option>
-                      <option value="">PUT</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-content">
-                <div class="input-field config-input">
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Aggregates</label
-                  >
-                  <div class="outer-select-field">
-                    <select
-                      class="select form-control e1 select-group"
-                      required
-                      placeholder="method tupe "
-                    >
-                      <option value="">Avg</option>
-                      <option value="">iam_userGlobal</option>
-                      <option value="">iam_userGlobal</option>
-                      <option value="">iam_userGlobal</option>
-                      <option value="">iam_userGlobal</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="input-field config-input">
-                  <label class="form-check-label" for="exampleCheck1"
-                    >Limit</label
-                  >
+<div class="breadcrumbSec">
+  <p>Intouch / <a href=""> API Data </a></p>
 
-                  <input
-                    type="number"
-                    class="form-control input-item"
-                    id="api-name"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-              <div class="btn-container">
-                <button class="verify-btn">Verified</button>
-                <button class="run-btn enable-btn">Run Query</button>
-              </div>
-            </form>
+</div>
+<div class="form-container">
+  <div class="formSec">
+    <h1>Configure Your API</h1>
+    <!-- <form > -->
+    <div class="right-top-container">
+      <div class="input-field config-input">
+        <label for="api-name" class="form-label">API Name</label>
+        <input type="email" class="form-control input-item" id="api-name" placeholder="" />
+      </div>
+      <div class="input-field config-input">
+        <label for="api-name" class="form-label">Resource Id</label>
+        <input type="email" class="form-control input-item" id="api-name" placeholder="" />
+      </div>
+      <!-- ----------------- -->
+      <div class="input-field config-input">
+        <label class="form-check-label" for="exampleCheck1">Method Type</label>
+        <ng-select [items]="allConstants.selectMethod" placeholder="Method Type" [searchFn]="selectMethodSearchable"
+          bindLabel="text" (change)="seletedMethodType($event);resetall('all')" (clear)="resetall('all')">
+        </ng-select>
+      </div>
+    </div>
+    <div class="right-bottom-container">
+      <div class="bottom-left-container">
+        <!-- <form> -->
+        <div class="form-content">
+          <div class="input-field config-input">
+            <label class="form-check-label" for="exampleCheck1">Select Table</label>
+            <ng-select [(ngModel)]="selected_table" (change)="onTableSelected($event);loadPostColumns();queryBuilder()"
+              placeholder="Select table" (clear)="resetall('table')" [disabled]="!selectedMethod">
+              <ng-option value="{{item}}" *ngFor="let item of tableList">{{item}}</ng-option>
+              <ng-option value="tbl1">tbl1</ng-option>
+              <ng-option value="tbl2">tbl2</ng-option>
+              <ng-option value="tbl3">tbl3</ng-option>
+              <ng-option value="tbl4">tbl4</ng-option>
+            </ng-select>
           </div>
-          <div class="bottom-right-container">
-            <div class="form-content">
-              <div class="input-field config-input">
-                <label class="form-check-label" for="exampleCheck1"
-                  >Query Builder</label
-                >
-                <div
-                  class="query-builder-input"
-                  placeholder="Select: From Customers"
-                >
-                  Select: From
-                  <span class="query-table-input">iam_userGlobal</span>
-                  where <span class="query-column-input">name</span>
-                  <span class="query-operator-input">=</span>
-                  <span class="query-value-input">Sagar Agg.</span>
-                  limit + <span class="query-limit-input">1</span>
-                </div>
+          <div class="input-field config-input"
+            *ngIf="selectedMethod != 'POST' && selectedMethod != 'PUT' && selectedMethod != 'DELETE'">
+            <label class="form-check-label" for="exampleCheck1">Select Column</label>
+            <ng-select (change)="queryBuilder()" (ngModelChange)="column_null($event)" placeholder="Select Column" [multiple]="true"
+              [(ngModel)]="selected_columns" [disabled]="!selectedMethod || !selected_table">
+              <ng-option id="option" value="*">ALL</ng-option>
+              <ng-option id="option" value="{{item.columnName}}" *ngFor="let item of columnList">{{item.columnName}}</ng-option>
+              <ng-option id="option" value="col-1">col-1</ng-option>
+              <ng-option id="option" value="col-2">col-2</ng-option>
+              <ng-option id="option" value="col-3">col-3</ng-option>
+            </ng-select>
+          </div>
+          <!-- -------------for post and put method colName-------- -->
+          <div class="input-field config-input unique-val" *ngIf="selectedMethod == 'POST' || selectedMethod == 'PUT'">
+            <label class="form-check-label" for="exampleCheck1">Request Body / Column Name</label>
+            <div class="">
+              <ng-select [(ngModel)]="postColumn" [multiple]="true" (ngModelChange)="queryBuilder()" required
+                placeholder="Request Body" (change)="onPostColumnSelected($event)"
+                [disabled]="!selectedMethod || !selected_table ">
+                <ng-option value="" id="option" value="{{item.columnName}}"
+                  *ngFor="let item of columnList">{{item.columnName}}</ng-option>
+                <ng-option value="col1">col1</ng-option>
+                <ng-option value="col2">col2</ng-option>
+                <ng-option value="col3">col3</ng-option>
+                <ng-option value="col4">col4</ng-option>
+              </ng-select>
+            </div>
+            <div class="unique-container" *ngIf="postColumn != '' &&  postColumn != undefined">
+              <div class="unique-col" *ngFor="let column of postColumn">
+                <label class="unique-label" for="{{'body' + column}}" title="{{column}}">{{column.length > 5 ?
+                  column.slice(0, 3) + '...' : column }}</label>
+                <input id="{{'body' + column}}" (keyup)="queryBuilder()" class="form-control input-item unique-input"
+                  type="text">
               </div>
             </div>
           </div>
         </div>
-      </form>
+        <!-- -------------/end for post method colName-------- -->
+
+        <!-- ----------Request  Params------------ -->
+        <div class="form-content">
+          <div class="input-field config-input unique-val"
+            *ngIf="selectedMethod == 'GET' || selectedMethod == 'PUT' || selectedMethod == 'DELETE'">
+            <label class="form-check-label" for="exampleCheck1">Select Request Params/Columns</label>
+            <div class="">
+              <!-- <ng-select [(ngModel)]="req_params" [multiple]="true" (ngModelChange)="queryBuilder()" -->
+              <ng-select [multiple]="true" 
+                (change)="queryBuilder()" 
+                required placeholder="Select columns"
+                (clear)="resetall('params');queryBuilder()" 
+                (add)="addParam($event);queryBuilder()"
+                (remove)="removeParam($event);queryBuilder()"
+                [readonly]="(logical_operators.length < req_params.length) || !selectedMethod || !selected_table"
+                [(ngModel)]="selectedUniqueColumn" 
+                (ngModelChange)="queryBuilder()"
+                >
+                <!-- (add)="onAddParam($event)" -->
+                <ng-option value="" id="option" value="{{item.columnName}}"
+                  *ngFor="let item of columnList">{{item.columnName}}</ng-option>
+                <ng-option value="col1">col1</ng-option>
+                <ng-option value="col2">col2</ng-option>
+                <ng-option value="col3">col3</ng-option>
+                <ng-option value="col4">col4</ng-option>
+              </ng-select>
+            </div>
+            <div class="unique-container" *ngIf="req_params != '' &&  req_params!= undefined">
+              <div class="unique-col" *ngFor="let column of req_params ; let i = index">
+                <label class="unique-label" for="{{column}}" title="{{column}}">{{column.length > 5 ? column.slice(0, 3)
+                  + '...' : column }}</label>
+                <input id="{{column+i}}" *ngIf="!(operators[i] === 'BETWEEN' || operators[i] === 'IS NULL' || operators[i] === 'IS NOT NULL')" [disabled]="i >= this.operators.length" (keyup)="queryBuilder()"
+                  class="form-control input-item unique-input" type="text">
+                  <!-- for between operator -->
+                  <div *ngIf="operators[i] === 'BETWEEN'">
+                    <input id="{{column+i}}" (keyup)="queryBuilder()" class="form-control input-item unique-input" type="text">
+                    <input id="{{column + (i + 1)}}" (keyup)="queryBuilder()" class="form-control input-item unique-input" type="text">
+                  </div>
+                  <!--  -->
+                  <ng-container *ngIf="operators[i] !== 'IN'">
+                    <button *ngIf="enableAdd(column,i) && !(operators[i] === 'BETWEEN' || operators[i] === 'IS NULL' || operators[i] === 'IS NOT NULL')" [disabled]="logical_operators.length < req_params.length" id="{{i}}"
+                      class="material-icons-outlined joinTable box" (click)="increament(column)" style="color: #000;"
+                      title="add more column">add_circle_outline</button>
+                  </ng-container>
+                  <!-- ----for In operator--- -->
+                  <!-- <ng-container *ngIf="operators[i] === 'IN'">
+                    <button *ngIf=" !(operators[i] === 'BETWEEN' || operators[i] === 'IS NULL' || operators[i] === 'IS NOT NULL')" [disabled]="" id="{{column + i}}"
+                    class="material-icons-outlined joinTable box" (click)="forInput(column)" style="color: #000;"
+                    title="add more column">add_circle_outline</button>
+                  </ng-container> -->
+                  
+                  <!-- ----for In operator--- -->
+                <button id="{{i}}" class="material-icons-outlined joinTable box"
+                  (click)="decrement($event);queryBuilder()" style="color: #000;" title="remove column">delete</button>
+                  <div *ngIf="i === req_params.length-1 && queryBuilder()"></div>
+              </div>
+            </div>
+            <!-- --------------group-by-------------------- --> <br>
+            <div class="">
+              <label class="form-check-label" for="exampleCheck1">Group By</label>
+              <ng-select [multiple]="true" required >
+                <ng-option value="age">age</ng-option>
+                <ng-option value="gender">gender</ng-option>
+                <ng-option value="gender">column_name2</ng-option>
+              </ng-select>
+            </div>
+            <!-- ------------------sort by--------------- -->
+            <div class="input-field config-input">
+              <label class="form-check-label" for="exampleCheck1">Sort By</label>
+              <div class="radio-box"><input type="radio" name="sort" value="sort1" /> Asc <input type="radio"
+                  name="sort" value="sort2" />Desc</div>
+            </div>
+
+            <!-- --------------aggregates------------- -->
+            <label class="form-check-label" for="exampleCheck1">Aggregates</label>
+            <div class="">
+              <ng-select [items]="allConstants.aggregates" placeholder="aggregates" [searchFn]="selectMethodSearchable"
+                bindLabel="text">
+              </ng-select>
+            </div>
+            <!-- ---------limit----------- -->
+            <div class="input-field config-input">
+              <label class="form-check-label" for="exampleCheck1">Limit</label>
+              <input type="number" class="form-control input-item" id="api-name" placeholder="" />
+            </div>
+          </div>
+          <!-- ---------------------------------- -->
+
+          <!-- <div class="input-field config-input">
+            <label class="form-check-label" for="exampleCheck1">Select Operator</label>
+            <div class="operator-container">
+              <ng-container *ngFor="let operators of allConstants.selectOperators">
+                <button [disabled]="!selectedMethod || !selected_table" value="{{operators.text}}"
+                  (click)="onSelectedOperators(operators.text);queryBuilder()">{{operators.text}}</button>
+              </ng-container>
+            </div>
+          </div> -->
+        </div>
+        <div class="btn-container">
+          <button class="verify-btn" type="submit" (click)="verifyQuery()">Verified</button>
+          <button class="run-btn enable-btn" disabled="isVerfied" (click)="runQuery()">Run Query</button>
+        </div>
+        <!-- </form> -->
+      </div>
+      <div class="bottom-right-container">
+        <form class="form-content">
+          <div class="input-field config-input">
+            <label class="form-check-label" for="exampleCheck1">Query Builder</label>
+            <div class="query-builder-input" placeholder="Select: From Customers">
+              {{finalquery}}
+            </div>
+          </div>
+        </form>
+        <div class="input-field config-input">
+          <label class="form-check-label" for="exampleCheck1">Select Operator</label>
+          <div class="operator-container">
+            <ng-container *ngFor="let operators of allConstants.selectOperators">
+              <button [disabled]="!selectedMethod || !selected_table" value="{{operators.text}}"
+                (click)="onSelectedOperators(operators.text);queryBuilder()">{{operators.text}}</button>
+            </ng-container>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- -----------fetch tablesDetail data------------ -->
+    <div class="table-container">
+      <table class="bottom-table-section" *ngIf="tableDetails != undefined">
+        <thead>
+          <tr *ngIf="query_outputs">
+            <th *ngFor="let header of output_table_headers">{{header}}</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="query_outputs">
+          <tr *ngFor="let data of query_outputs">
+            <td *ngFor="let header of output_table_headers">{{data[header]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- -----------fetch columns data end------------ -->
   </div>
+</div>
+<div class="footer">
+  <button class="create-btn">Create</button>
+</div>

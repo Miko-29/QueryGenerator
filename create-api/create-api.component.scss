@@ -1,0 +1,49 @@
+// select option:hover {
+//   background-color: green !important;
+// }
+
+
+// ::ng-deep .ng-dropdown-panel .scroll-host{
+//   color: #000 !important;
+// }
+
+::ng-deep .ng-select .ng-clear-wrapper .ng-clear:hover {
+  color: green !important;
+}
+
+.joinTable {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 12px 10px;
+  font-weight: 600;
+  color: green;
+}
+
+
+.unique-container{
+  background-color: #ffffff;
+  border: 1px solid #e3e9ed;
+  border-radius: 8px;
+  padding: 16px;
+  /* padding-bottom: 90px; */
+  // min-height: 150px;
+  outline: none;
+  resize: none;
+}
+
+.unique-col {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+ .unique-label {
+  font-size: 1em;
+  width : 30%;
+  margin : auto !important;
+}
+
+ .unique-input {
+  width : 70% !important;
+}
+
