@@ -1,0 +1,358 @@
+<div class="dashboard-sec">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="pageTitle">
+        <h1>Create Query</h1>
+        <ul class="breadcrumb">
+          <li><a>home</a></li>
+          <li><a>Mongo Query</a></li>
+          <li class="active">create-query</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="countContainer">
+        <div class="filterRow">
+          <h3>Collection Name</h3>
+          <div class="selectboxSec"> <ng-select bindLabel="name" bindValue="id" [(ngModel)]="selectedDatabase"
+              placeholder="select collection type" name="deviceType" (change)="onDataBaseChange();">
+              <ng-container *ngFor="let db of availableDatabases">
+                <ng-option [value]="db"> {{db}}</ng-option>
+              </ng-container>
+            </ng-select>
+          </div>
+
+          <div class="switchBtn">
+            <label class="switch">
+              <input type="checkbox"[(ngModel)]="isNewDatabase"  name="alarm222" >
+              <span class="slider round"></span>
+              
+            </label>
+            <span class="active" *ngIf="isNewDatabase==false">Old Database</span>
+              <span class="inActive" *ngIf="isNewDatabase==true">New Database</span>
+          </div>
+
+        </div>
+
+
+
+
+        <div class="accordionSec">
+          <div class="row">
+            <div class="col-lg-12">
+
+              <div class="formRowMain">
+                <div class="formRow">
+                  <div class="form-group">
+                    <label for="form_name">Select Field Name:</label>
+                    <div class="selectboxSec">
+                      <ng-select bindLabel="name" bindValue="id" [(ngModel)]="selectedField"
+                        placeholder="select field type" name="deviceType" (change)="clearInputs();">
+                        <ng-container *ngFor="let field of availableFields">
+                          <ng-option [value]="field"> {{field}}</ng-option>
+                        </ng-container>
+                      </ng-select>
+                    </div>
+                  </div>
+
+
+
+                  <div class="form-group">
+                    <label for="form_name">Select Operator Type:</label>
+                    <div class="selectboxSec"> <ng-select bindLabel="name" bindValue="id" [(ngModel)]="selectedOperator"
+                        placeholder="select Operator type" name="deviceType" (change)="clearInputs();">
+                        <ng-container *ngFor="let field of operatorList">
+                          <ng-option [value]="field.id"> {{field.name}}</ng-option>
+                        </ng-container>
+                      </ng-select>
+                    </div>
+                  </div>
+
+
+
+                  <div class="form-group">
+                    <label for="form_message">Enter Value</label>
+                    <div class="inputboxSec">
+                      <input id="form_message" [(ngModel)]="inputValue" name="tokennnn" class="form-control"
+                        placeholder="Value" rows="1" required="required" data-error="send a message." />
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="addFormBtn">
+                  <button class="btn btn-default ripple yellowBtn" (click)="addCondition()"><i
+                      class="material-icons">add</i>Add Condition</button>
+                </div>
+              </div>
+              <div class="conditions-list">
+                <h4>Current Conditions:</h4>
+                <ul class="condChiplist">
+                  <li>
+                    <div class="condchip" *ngFor="let condition of conditionArray">
+                      {{ condition.fieldname }} {{   operatorMapObj[condition.operation ]  }} {{ condition.valArr }}
+
+                      <button (click)="removeCondition(condition.fieldname)">X</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="formRowMain">
+                <div class="formRow">
+                  <div class="form-group">
+                    <label for="form_message">Enter Limit(0-200)</label>
+                    <div class="inputboxSec">
+                      <input id="form_message" [(ngModel)]="limit" name="tokennnn" class="form-control"
+                        placeholder="Value" rows="1" required="required" data-error="send a message." type="number"
+                        min="0" max="200" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="form_message">Enter Skip(>=0)</label>
+                    <div class="inputboxSec">
+                      <input id="form_message" [(ngModel)]="skip" name="tokennnn" class="form-control"
+                        placeholder="Value" rows="1" required="required" data-error="send a message." type="number"
+                        min="0" />
+                    </div>
+                  </div>
+
+
+
+
+
+                </div>
+                <div class="addFormBtn">
+                  <button class="btn btn-default ripple yellowBtn" (click)="fireQuery()"><i
+                    class="material-icons">flash_on</i>Fire Query</button>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+
+
+
+
+
+          <!-- <div class="query-preview">
+                                <h3>Generated Query:</h3>
+                                <pre>{{ generatedQuery | json }}</pre>
+                              </div> -->
+         
+
+          <!-- <div class="view-toggle">
+                                <label class="switch">
+                                  <input type="checkbox" (change)="onTableViewChange()">
+                                  <span class="slider round"></span>
+                                </label>
+                                <span *ngIf="isTableView">Table View</span>
+                                <span *ngIf="!isTableView">JSON View</span>
+                              </div> -->
+
+          <!-- <div class="switchBtn">
+                                <label class="switch">
+                                  <input type="checkbox" [(ngModel)]="isTableView" name="alarm" (change)="onTableViewChange()">
+                                  <span class="slider round"></span>
+                                  
+                                </label>
+                                <span class="active" *ngIf="isTableView==true">Active</span>
+                                  <span class="inActive" *ngIf="isTableView==false">In Active</span>
+                              </div> -->
+
+
+
+
+
+            <!-- <div class="pagination-controls">
+                                  <label for="recordsPerPage">Records Per Page:</label>
+                                  <input type="number" id="recordsPerPage" [(ngModel)]="recordsPerPage" (change)="updatePagination()" min="1">
+                                
+                                  <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+                                  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+                                  <button (click)="nextPage()" [disabled]="currentPage >= totalPages">Next</button>
+                                </div> -->
+
+          <!-- JSON View -->
+          <!-- <div [hidden]="!isTableView">
+                                <ngx-json-viewer [json]="paginatedData"></ngx-json-viewer>
+                              </div> -->
+
+          <!-- Table View -->
+          <div >
+            <div class="mainTableSec">
+              <div class="mainTableHead">
+                <div class="pagination-controls">
+                  <label for="recordsPerPage">Records Per Page:</label>
+                  
+                  <input type="number" id="recordsPerPage" [(ngModel)]="recordsPerPage" (change)="updatePagination()" min="1">
+                
+                  <button (click)="previousPage()" class="prev" [disabled]="currentPage === 1">Previous</button>
+                  <span class="pageNum">{{ currentPage }}/{{ totalPages }}</span>
+                  <button (click)="nextPage()" class="next" [disabled]="currentPage >= totalPages">Next</button>
+                
+                </div>
+
+                
+                <div class="mainTableRight">
+                  <div class="recordCount">
+                    Total Data:<span class="badge">{{this.mongoData.length}}</span>
+                  </div>
+                  <div>
+                    <div class="addFormBtn">
+                      <button class="btn btn-default ripple yellowBtn" (click)="downloadJson()"><i
+                        class="material-icons">file_download</i>Download</button>
+                    </div>
+                    
+                    </div>
+                   <div class="switchBtn">
+                                <label class="switch">
+                                  <input type="checkbox"[(ngModel)]="isTableView"  name="alarm" >
+                                  <span class="slider round"></span>
+                                  
+                                </label>
+                                <span class="active" *ngIf="isTableView==true">Table</span>
+                                  <span class="inActive" *ngIf="isTableView==false">JSON</span>
+                              </div>
+                <div class="t-h-c-item">
+                     
+               
+               <input type="text" class="t-search" name="searchText" placeholder="Search" [(ngModel)]="searchText" (input)="search()">
+               </div>
+               </div>
+              </div>
+              
+              <div class="reportTableSec"  *ngIf="isTableView"  >
+                <div class="blankState" *ngIf="paginatedData.length <= 0 && paginatedData == undefined">
+                  <span class="blankStateIcon"><img src="assets/img/tableBlankImg.png" alt=""></span>
+                  <h5>No data available</h5>
+      
+                </div>
+              <div class="table-responsive_div">
+                <table class="table"[hidden]="!isTableView"   *ngIf="paginatedData.length > 0 && paginatedData != undefined">
+
+               
+
+                  <thead>
+                    <tr>
+                      <th>Sr No</th>
+                      <th *ngFor="let col of displayedColumns">{{ col }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let row of paginatedData; let i = index">
+                      <td>{{ (currentPage - 1) * recordsPerPage + i + 1 }}</td> <!-- Sr No -->
+                      <td *ngFor="let col of displayedColumns">
+                        <ng-container *ngIf="!isComplex(row[col]); else viewTemplate">
+                          {{ row[col] || '-' }}
+                        </ng-container>
+                        <ng-template #viewTemplate>
+                          <button class="tbBtn"  data-toggle="modal" data-target="#propertyPOP" (click)="openPopup(row[col])"><i class="material-icons">visibility</i> View</button>
+                        </ng-template>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+              </div>
+              
+            </div>
+            <div [hidden]="isTableView"  class="userCacheDiv">
+           
+              <ngx-json-viewer [json]="paginatedData"></ngx-json-viewer>
+            </div>
+           
+
+
+          </div>
+          </div>
+
+
+        
+
+        </div>
+
+        
+
+
+
+        <!-- <div class="mongo-data">
+                                  <h3>MongoDB Data:</h3>
+                              
+                                  <div *ngFor="let doc of mongoData">s
+                                    <div class="document">
+                                      <div *ngFor="let key of objectKeys(doc)">
+                                        <div class="field">
+                                          <div class="field-header" (click)="toggleExpand(key)">
+                                            <span>{{ key }}:</span>
+                                            <span *ngIf="isExpandable(doc[key])">[Click to Expand]</span>
+                                          </div>
+                              
+                                          <div *ngIf="isExpanded(key)" class="field-value">
+                                            <pre>{{ doc[key] | json }}</pre>
+                                          </div>
+                                          <div *ngIf="!isExpanded(key)" class="field-value">
+                                            {{ doc[key] }}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                          
+                          
+                    
+                    
+                    
+                              </div>
+                            </div> -->
+
+
+
+
+
+
+
+      </div>
+
+
+      <!-- <div *ngIf="popupData" class="popup">
+                  <div class="popup-content">
+                    <span class="close" (click)="closePopup()">&times;</span>
+                    <pre>{{ popupData | json }}</pre>
+                  </div>
+                </div>  -->
+
+
+      <div class="modal fade customPopup" role="dialog" id="propertyPOP" 
+       >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>JSON VIEW</h3>
+              <button   type="button" (click)="closePropPanel()" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- <div class="jsScrollDiv">
+              <ngx-json-viewer [json]="popupData"  [expanded]="true"></ngx-json-viewer>
+            </div> -->
+
+            <div class="userCacheDiv">
+              <ngx-json-viewer [json]="popupData" [expanded]="true"></ngx-json-viewer>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
